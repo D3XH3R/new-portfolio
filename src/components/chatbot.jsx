@@ -41,13 +41,10 @@ export default function ChatBot() {
       function toggle() {
         setVisibility(prevState => !prevState)
       }
-      let styles = {
-        display: visibility ? "block" : "none"
-      }
     return (
         <div className="chatbotContainer">
             <div className="svg" onClick={toggle}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z"/></svg></div>
-            <div className="chat-dialog" style={styles}>
+            <div className={visibility ? "chat-dialog show" : "chat-dialog"}>
                 <div className="message-dialog">
                     {messages.map((msg, index) => (
                         <div key={index} className={msg.sender}>
