@@ -1,6 +1,23 @@
+import {motion} from 'framer-motion'
+
 export default function About() {
     return (
-        <div className="about common-styles">
+        <motion.div className="about common-styles"
+        initial={{
+            x: '-30%',
+            opacity: 0
+        }}
+        animate={{
+            x: '0%',
+            opacity:1
+        }}
+        transition={{
+            duration: 6,
+            delay: .2,
+            type: 'spring',
+            damping:25
+        }}
+        >
             <h3>
                 About
             </h3>
@@ -20,6 +37,6 @@ export default function About() {
                 <li>🎬 Watching series (Classroom of the Elite is a favorite)</li>
                 <li>🚀 Always learning and working on new tech projects</li>
             </ul>
-        </div>
+        </motion.div>
     )
 }

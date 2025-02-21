@@ -1,7 +1,21 @@
-
+import {motion} from 'framer-motion'
 export default function Skills() {
     return (
-        <div className="skills common-styles">
+        <motion.div className="skills common-styles"
+        initial={{
+            x: '30%',
+            opacity: 0
+        }}
+        animate={{
+            x: '0%',
+            opacity:1
+        }}
+        transition={{
+            duration: 3,
+            type: 'spring',
+            damping:25
+        }}
+        >
             <h3>Skills</h3>
             <ul>
                 <li><span>React:</span> I used react to build so many projects including this portfolio site.</li>
@@ -10,6 +24,6 @@ export default function Skills() {
                 <li><span>Bootstrap:</span> For polishing websites along with <span className="css">CSS</span>.</li>
                 <li><span>PHP:</span> For the backend.</li>
             </ul>
-        </div>
+        </motion.div>
     )
 }

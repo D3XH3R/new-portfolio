@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {motion} from 'framer-motion'  //? 16:00
 
 export default function ChatBot() {
     const [visibility, setVisibility] = useState(false)
@@ -42,7 +43,21 @@ export default function ChatBot() {
         setVisibility(prevState => !prevState)
       }
     return (
-        <div className="chatbotContainer">
+        <motion.div className="chatbotContainer"
+        initial={{
+            y: '70%',
+            opacity: 0
+        }}
+        animate={{
+            y: '0%',
+            opacity:1
+        }}
+        transition={{
+            duration: 3,
+            delay:.3,
+            type: 'spring',
+            damping:35
+        }}>
             <div className="svg" onClick={toggle}><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z"/></svg></div>
             <div className={visibility ? "chat-dialog show" : "chat-dialog"}>
                 <div className="message-dialog">
@@ -57,6 +72,6 @@ export default function ChatBot() {
                     <button className="send"onClick={handleSend}><svg xmlns="http://www.w3.org/2000/svg" height="34px" viewBox="0 -960 960 960" width="34px" fill="white"><path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/></svg></button>
                 </form>
             </div>
-        </div>
+        </motion.div>
     )
 }
