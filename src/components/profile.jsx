@@ -13,9 +13,7 @@ export default function Profile() {
             opacity:1
         }}
         transition={{
-            duration: 3,
-            type: 'spring',
-            damping:25
+            duration: .8,
         }}
         >
             <div className="imageContainer">

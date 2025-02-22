@@ -3,7 +3,7 @@ export default function Skills() {
     return (
         <motion.div className="skills common-styles"
         initial={{
-            x: '30%',
+            x: '60%',
             opacity: 0
         }}
         animate={{
@@ -11,9 +11,7 @@ export default function Skills() {
             opacity:1
         }}
         transition={{
-            duration: 3,
-            type: 'spring',
-            damping:25
+            duration: .8,
         }}
         >
             <h3>Skills</h3>

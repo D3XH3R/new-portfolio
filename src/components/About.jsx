@@ -4,7 +4,7 @@ export default function About() {
     return (
         <motion.div className="about common-styles"
         initial={{
-            x: '-30%',
+            x: '-60%',
             opacity: 0
         }}
         animate={{
@@ -12,10 +12,8 @@ export default function About() {
             opacity:1
         }}
         transition={{
-            duration: 6,
+            duration: .7,
             delay: .2,
-            type: 'spring',
-            damping:25
         }}
         >
             <h3>
